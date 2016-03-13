@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+
+	<bean id="helloWorld" class="test.HelloWorld">
+
+		<property name="message" value="Hello World!" />
+
+	</bean>
+	<bean id="apple" class="test.Fruit">
+		<constructor-arg index="0" value="apple" />
+		<constructor-arg index="1" value="0.3" />
+	</bean>
+	<bean id="pear" class="test.Fruit">
+		<property name="type" value="pear" />
+		<property name="weight" value="0.5" />
+	</bean>
+
+
+
+
+	<bean id="button" class="test.Button">
+
+		<property name="pos" ref="myPos" />
+
+		<property name="size" ref="mySize" />
+
+	</bean>
+
+	<bean id="mySize" class="test.Size">
+
+		<property name="width" value="50" />
+
+		<property name="height" value="30" />
+
+	</bean>
+
+
+
+	<bean id="myPos" class="test.Position">
+
+		<property name="x" value="80" />
+
+		<property name="y" value="60" />
+
+	</bean>
+</beans>
+

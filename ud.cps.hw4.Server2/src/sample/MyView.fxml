@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections ?>
+
+<BorderPane fx:id="bPane" maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+	prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="sample.MyViewController">
+	<right>
+		<VBox prefHeight="600.0" prefWidth="309.0" BorderPane.alignment="CENTER">
+			<children>
+				<ScrollPane fx:id="sPane" MinHeight="271" MaxHeight="271"
+					MinWidth="309" MaxWidth="309" HbarPolicy="NEVER">
+					<TextFlow fx:id="textflow" style="-fx-background-color: white"
+						prefHeight="271.0" prefWidth="309.0" />
+				</ScrollPane>
+				<HBox />
+				<HBox>
+					<children>
+						<ComboBox fx:id="fontColor" prefHeight="26.0" prefWidth="101.0"
+							promptText="font color" onAction="#changeFont">
+							<value>
+								<String fx:value="Pink" />
+							</value>
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="Pink" />
+									<String fx:value="Orange" />
+									<String fx:value="Red" />
+									<String fx:value="Yellow" />
+									<String fx:value="Blue" />
+									<String fx:value="Purple" />
+								</FXCollections>
+							</items>
+						</ComboBox>
+						<ComboBox fx:id="fontSize" prefHeight="26.0" prefWidth="103.0"
+							promptText="font size" onAction="#changeFont">
+							<value>
+								<String fx:value="12" />
+							</value>
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="12" />
+									<String fx:value="13" />
+									<String fx:value="14" />
+									<String fx:value="15" />
+									<String fx:value="16" />
+									<String fx:value="17" />
+								</FXCollections>
+							</items>
+						</ComboBox>
+						<ComboBox fx:id="bgColor" prefHeight="26.0" prefWidth="111.0"
+							promptText="style" onAction="#changeBG">
+							<value>
+								<String fx:value="Pink" />
+							</value>
+							<items>
+								<FXCollections fx:factory="observableArrayList">
+									<String fx:value="Pink" />
+									<String fx:value="Orange" />
+									<String fx:value="Red" />
+									<String fx:value="Yellow" />
+									<String fx:value="Blue" />
+									<String fx:value="Purple" />
+								</FXCollections>
+							</items>
+						</ComboBox>
+					</children>
+				</HBox>
+				<TextArea fx:id="textarea" prefHeight="253.0" prefWidth="309.0" />
+				<HBox>
+					<children>
+						<Button mnemonicParsing="false" onAction="#sendFuc"
+							prefHeight="39.0" prefWidth="70.0" text="Send" />
+						<Label prefHeight="16.0" prefWidth="10.0" text="  " />
+						<Button mnemonicParsing="false" onAction="#clearFuc"
+							prefHeight="39.0" prefWidth="71.0" text="Clear" />
+						<Label prefHeight="16.0" prefWidth="10.0" text="  " />
+						<Button mnemonicParsing="false" onAction="#searchFuc"
+							prefHeight="39.0" prefWidth="130.0" text="Search History" />
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</right>
+	<left>
+		<ImageView fx:id="userIcon" fitHeight="119.0" fitWidth="93.0"
+			pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_LEFT">
+
+		</ImageView>
+	</left>
+</BorderPane>
